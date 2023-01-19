@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Step with DOM</title>
+</head>
+<body>
+    <h1>Starting with DOM</h1>
+    <p>Results</p>
+    <p>Learning how to use <strong>DOM</strong> in JavaScript.</p>
+    <div id="msg" name="divi">Click to see the result</div>
+    <script>
+        // Get first tag 'p' element
+        var p1 = window.document.getElementsByTagName('p')[0]
+        p1.style.color = 'blue'
+        window.document.write('The first tag p is: ' + p1.innerText) // .innerHTML pega o texto com as formatacoes
+
+        // Por ID
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+        d.innerText = 'I am waiting' // Mudando texto da pagina
+
+        //Por Nome
+        var name = window.document.getElementsByName('divi')[0]
+        name.innerText = 'Change name...'
+        
+        // Por Seletor
+        var s = window.document.querySelector('div#msg')
+        s.style.color = 'yellow'
+        s.style.background = 'blue'
+    
+    </script>
+</body>
+</html>
