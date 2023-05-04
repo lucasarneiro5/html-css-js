@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meu site</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+  <body>
+
+    <!--Nav bar-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="height: 80px;">
+        <div class="container-fluid">
+          <a class="navbar-brand text-primary" href="#"><strong>Nome da Empresa</strong></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Quem Somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Clientes</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button">Portfolio</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <button class="btn btn-outline-success" type="button">Fale Conosco</button>
+            </form>
+        
+          </div>
+        </div>      
+      </nav>
+      <!--Nav bar-->
+
+      
+    <!--Cebeçalho-->    
+      <header>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-12 col-lg-6 pt-5">
+                    <!--
+                    -"col-12" especifica que o elemento deve ocupar 12 colunas do sistema de grid usado no Bootstrap. 
+                    O sistema de grid é usado para dividir a página em 12 partes iguais, e os elementos podem ser atribuídos a um número de colunas para determinar sua largura.
+                    
+                    -"col-lg-6" especifica que, para telas com um breakpoint grande ou maior (geralmente uma largura de mais de 992 pixels), o elemento deve ocupar 6 colunas. 
+                    Isso permite que o elemento tenha uma largura menor em telas maiores.
+                    
+                    -"pt-5" especifica um espaçamento superior (padding-top) de 5 unidades em relação ao elemento. 
+                    O espaçamento é medido em unidades relativas (por exemplo, pixels ou ems) e pode ser usado para criar espaçamento entre elementos.-->
+                    
+                    <h1 class="text-center text-md-start">Exemplo de site com Bootstrap.</h1>
+                    <!-- Ela especifica que o texto deve ser alinhado à esquerda em telas com um breakpoint médio ou maior. 
+                    O breakpoint médio padrão do Bootstrap é de 768 pixels de largura, o que significa que em telas com mais de 768 pixels de largura, o texto será alinhado à esquerda. 
+                    Em telas menores que isso, o texto manterá o alinhamento padrão.
+                    Essa classe é útil para criar layouts responsivos, onde o alinhamento do texto pode ser ajustado de acordo com o tamanho da tela, garantindo que o conteúdo seja exibido de forma clara e organizada em todas as resoluções.-->
+                    
+                    <p class="lead text-muted text-center text-md-start">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                        Eligendi sed repellendus officiis odio veritatis doloremque asperiores quos excepturi pariatur delectus sit ipsum repudiandae dolorem rerum, odit suscipit consectetur quam. Quae.</p>
+                    
+                    <div class="mt-5"> <!-- aumentar espaçamento de texto para os botoes-->
+                        <button class="btn btn-primary btn-lg">Saiba Mais</button>
+                        <button class="btn btn-outline-primary btn-lg">Conheça nossos clientes</button>
+                    </div>
+                </div>         
+                <div class="col-12 col-lg-6 p-10 mt-5">
+                    <img src="https://cdn.pixabay.com/photo/2016/06/28/05/10/laptop-1483974_1280.jpg" class="img-fluid"><!--Img responsiva-->
+                </div>
+            </div>
+        </div>
+      </header>
+    <!--Cebeçalho-->  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+</body>
+</html>
