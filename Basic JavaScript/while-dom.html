@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Loop While com DOM</title>
+</head>
+<body>
+
+<h2>Exemplo de Loop While com DOM</h2>
+
+<ul id="minhaLista">
+    <!-- Lista onde os elementos serão adicionados -->
+</ul>
+
+<button onclick="iniciarLoop()">Iniciar Loop</button>
+<button onclick="pararLoop()">Parar Loop</button>
+
+<script>
+    let contador = 1; // Inicializa o contador
+    let loopAtivo = false; // Indica se o loop está ativo
+
+    function iniciarLoop() {
+        loopAtivo = true; // Define o loop como ativo
+
+        // Inicia o loop enquanto o contador for menor ou igual a 10
+        while (contador <= 10 && loopAtivo) {
+            adicionarElemento(); // Função para adicionar elemento à lista
+            contador++;
+        }
+    }
+
+    function adicionarElemento() {
+        // Cria um novo item de lista e o adiciona à lista
+        let lista = document.getElementById("minhaLista");
+        let novoItem = document.createElement("li");
+        novoItem.appendChild(document.createTextNode("Elemento " + contador));
+        lista.appendChild(novoItem);
+    }
+
+    function pararLoop() {
+        loopAtivo = false; // Define o loop como inativo
+    }
+</script>
+
+</body>
+</html>
