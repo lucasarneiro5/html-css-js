@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Callback com DOM</title>
+</head>
+<body>
+
+<button id="meuBotao">Clique-me</button>
+
+<script>
+  // Função que simula uma operação assíncrona (por exemplo, uma requisição AJAX)
+  function operacaoAssincrona(callback) {
+    console.log("Iniciando operação assíncrona...");
+
+    // Simulando um atraso de 2 segundos
+    setTimeout(function() {
+      alert("Operação assíncrona concluída!");
+      callback(); // Chamando a função de callback após a conclusão
+    }, 2000);
+  }
+
+  // Função de callback que será chamada após a operação assíncrona
+  function callback() {
+    alert("A operação assíncrona foi finalizada, agora posso manipular o DOM.");
+
+    // Alterando o texto do botão após a conclusão da operação assíncrona
+    const meuBotao = document.getElementById('meuBotao');
+    meuBotao.textContent = 'Clique novamente!';
+  }
+
+  // Adicionando um ouvinte de evento para o botão
+  const botao = document.getElementById('meuBotao');
+  botao.addEventListener('click', function() {
+    // Chamando a função assíncrona e passando a função de callback
+    operacaoAssincrona(callback);
+  });
+</script>
+
+</body>
+</html>

@@ -1,47 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo de Loop While com DOM</title>
-</head>
-<body>
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Exemplo de Laço While com DOM</title> 
 
-<h2>Exemplo de Loop While com DOM</h2>
+</head> 
+<body> 
+  <ul id="minhaLista">
 
-<ul id="minhaLista">
-    <!-- Lista onde os elementos serão adicionados -->
-</ul>
+  </ul> 
 
-<button onclick="iniciarLoop()">Iniciar Loop</button>
-<button onclick="pararLoop()">Parar Loop</button>
+  <script> 
+    // Obtém uma referência à lista usando o DOM 
+    var minhaLista = document.getElementById("minhaLista"); 
 
-<script>
-    let contador = 1; // Inicializa o contador
-    let loopAtivo = false; // Indica se o loop está ativo
+    // Inicializa uma variável de contador 
+    var contador = 1; 
 
-    function iniciarLoop() {
-        loopAtivo = true; // Define o loop como ativo
+    // Adiciona elementos à lista usando um laço while 
+    while (contador <= 5) { 
 
-        // Inicia o loop enquanto o contador for menor ou igual a 10
-        while (contador <= 10 && loopAtivo) {
-            adicionarElemento(); // Função para adicionar elemento à lista
-            contador++;
-        }
-    }
+      // Cria um novo item de lista 
+      var novoItem = document.createElement("li"); 
 
-    function adicionarElemento() {
-        // Cria um novo item de lista e o adiciona à lista
-        let lista = document.getElementById("minhaLista");
-        let novoItem = document.createElement("li");
-        novoItem.appendChild(document.createTextNode("Elemento " + contador));
-        lista.appendChild(novoItem);
-    }
+      // Define o texto do item de lista 
+      novoItem.textContent = "Item " + contador; 
 
-    function pararLoop() {
-        loopAtivo = false; // Define o loop como inativo
-    }
-</script>
+      // Adiciona o item à lista 
+      minhaLista.appendChild(novoItem); 
 
-</body>
-</html>
+      // Incrementa o contador 
+      contador++; 
+
+    } 
+
+  </script> 
+</body> 
+</html> 

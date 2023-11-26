@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Promises com DOM</title>
+</head>
+<body>
+
+<p id="resultado">Aguardando resultado...</p>
+<button id="meuBotao">Iniciar Operação Assíncrona</button>
+
+<script>
+  // Função assíncrona que retorna uma Promise
+  function operacaoAssincrona() {
+    return new Promise((resolve, reject) => {
+      alert("Iniciando operação assíncrona...");
+
+      // Simulando uma operação assíncrona com um atraso de 2 segundos
+      setTimeout(() => {
+        const sucesso = true; // Simula o sucesso da operação
+        if (sucesso) {
+          alert("Operação assíncrona concluída!");
+          resolve("Resultado da operação bem-sucedida"); // Resolvendo a Promise com sucesso
+        } else {
+          reject("Erro na operação assíncrona"); // Rejeitando a Promise em caso de erro
+        }
+      }, 2000);
+    });
+  }
+
+  // Função para atualizar o resultado no DOM
+  function atualizarResultado(mensagem) {
+    const resultadoElemento = document.getElementById('resultado');
+    resultadoElemento.textContent = mensagem;
+  }
+
+  // Adicionando um ouvinte de evento para o botão
+  const botao = document.getElementById('meuBotao');
+  botao.addEventListener('click', function() {
+    // Chamando a função assíncrona e utilizando a Promise resultante
+    operacaoAssincrona()
+      .then((resultado) => {
+        atualizarResultado(`Sucesso: ${resultado}`);
+      })
+      .catch((erro) => {
+        atualizarResultado(`Erro: ${erro}`);
+      });
+  });
+</script>
+
+</body>
+</html>
