@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de DOM com Web Storage</title>
+</head>
+<body>
+
+<input type="text" id="nomeInput" placeholder="Digite seu nome">
+<button id="salvarBotao">Salvar no Local Storage</button>
+<p id="mensagem"></p>
+
+<script>
+  // Verificar se o localStorage é suportado pelo navegador
+  if (typeof(Storage) !== "undefined") {
+    // Recuperar o nome do localStorage e exibir na página
+    const nomeSalvo = localStorage.getItem('nome');
+    if (nomeSalvo) {
+      document.getElementById('mensagem').textContent = `Olá, ${nomeSalvo}! Seu nome foi carregado do Local Storage.`;
+    }
+
+    // Adicionar um ouvinte de evento para o botão
+    const salvarBotao = document.getElementById('salvarBotao');
+    salvarBotao.addEventListener('click', function() {
+      // Obter o valor do input
+      const nomeInput = document.getElementById('nomeInput').value;
+
+      // Salvar o nome no localStorage
+      localStorage.setItem('nome', nomeInput);
+
+      // Atualizar a mensagem na página
+      document.getElementById('mensagem').textContent = `Olá, ${nomeInput}! Seu nome foi salvo no Local Storage.`;
+    });
+  } else {
+    // Se o localStorage não for suportado, exibir uma mensagem de aviso
+    document.getElementById('mensagem').textContent = "Desculpe, o seu navegador não suporta Web Storage.";
+  }
+</script>
+
+</body>
+</html>
