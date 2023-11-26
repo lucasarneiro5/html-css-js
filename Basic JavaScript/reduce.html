@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Função Reduce com DOM</title>
+</head>
+<body>
+
+<p id="resultado"></p>
+
+<script>
+  // Array de números
+  const numeros = [1, 2, 3, 4, 5];
+
+  // Usando a função reduce para calcular a soma dos números
+  const soma = numeros.reduce(function(acumulador, numero) {
+    return acumulador + numero;
+  }, 0); // O segundo argumento para reduce é o valor inicial do acumulador
+
+  // Selecionar o elemento no DOM
+  const resultadoElemento = document.getElementById('resultado');
+
+  // Exibindo o resultado no DOM
+  resultadoElemento.textContent = `A soma dos números é: ${soma}`;
+</script>
+
+</body>
+</html>

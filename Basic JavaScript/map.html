@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Função Map com DOM</title>
+</head>
+<body>
+
+<ul id="minhaLista"></ul>
+
+<script>
+  // Array de itens para a lista
+  const itens = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+
+  // Selecionar a lista no DOM
+  const minhaLista = document.getElementById('minhaLista');
+
+  // Usando a função map para criar elementos li e adicioná-los à lista
+  const itensNaLista = itens.map(function(item) {
+    const li = document.createElement('li');
+    li.textContent = item;
+    return li;
+  });
+
+  // Adicionando os elementos li à lista no DOM
+  itensNaLista.forEach(function(li) {
+    minhaLista.appendChild(li);
+  });
+</script>
+
+</body>
+</html>
